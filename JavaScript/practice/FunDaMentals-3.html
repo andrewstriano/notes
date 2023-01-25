@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Fundamentals lesson 3</title>
+</head>
+<body>
+
+<div>
+    <input id="textBox" type="text"></input>
+    <div id="output"></div>
+</div>
+
+    <script>
+
+        //functions are store bits of code that can be
+        // invoked by calling the function name, and including
+        // any necessary parameters. 
+
+        function myFunction()  {
+
+            alert('this is my function');
+
+        }
+
+        myFunction(); // This calls the function defined above.
+
+        // the above first bit is called function declaration, 
+        // which is always hoisted meaning you can call a function
+        //above its declaration.
+
+        const myNumber = Math.random();
+
+        // the built in function above requires no parameters
+        // and returns a random number between 0 and 1.
+
+        const myText = 'I am a string';
+
+        const newString = myText.replace('string', 'sausage');
+        //this built in function requires two parameters.
+        // the sub-string to replace, and what its replacing with
+
+
+        const myArray = ['I', 'love', 'chocolate', 'frogs'];
+        const madeAString = myArray.join(' ');
+        console.log(madeAString);
+        const madeAnotherString = myArray.join();
+        console.log(madeAnotherString);
+
+        // if no parameters are included, then the function will usually 
+        // revert back to some default behavior.
+
+        // if you want to support default parameters you just need to assign something to the name
+        //of the parameter
+
+       const textBox = document.querySelector("#textBox");
+       const output = document.querySelector("#output");
+
+        function hello(name = 'Andrew')  {
+
+            console.log(`Hello, ${name}!`);
+
+        }
+
+        hello('Drew'); // Hello, Drew!
+        hello(); // Hello, Andrew!
+
+        function logKey(event) {
+            console.log(`You pressed "${event.key}".`);
+
+        }
+        
+
+        textBox.addEventListener('keydown', logKey);
+
+        // you could pass an anonymous function, instead of defining logKey
+
+        textBox.addEventListener('keydown', function(event) {
+            console.log(`You pressed "${event.key}".`);
+        });
+
+//ARROW FUNCTIONS
+
+        //if you pass an anonymous function you can use an alternative form called arrow functions.
+
+        textBox.addEventListener('keydown', (event) => {
+        console.log(`You pressed "${event.key}".`);
+        });
+
+        //if the function only takes one parameter you can omit the curly brackets.
+        textBox.addEventListener('keydown', (event) =>
+        console.log(`You pressed "${event.key}."`));
+        
+        // if the function only takes one parameter you can also omit the brackets around the 
+        //parameter as well.
+
+        textBox.addEventListener('keydown', event =>
+        output.textContent = `You pressed "${event.key}".`);
+
+        // if your function needs to return a value, and only has one line, you can also ommit
+        // the return statement.
+
+        const originals = [1, 2, 3];
+
+        const doubled = originals.map((item) => item * 2);
+
+        console.log(doubled);
+
+        // scope is important in functions as well.
+
+        const firstName = "Andrew";
+
+    function hiFunction() {
+        console.log(firstName);
+    };
+    
+    hiFunction(); // this works because the variable was declared at the global scope
+    // giving this function access to use it.
+
+    function secondFunction() {
+        const x = "25";
+        console.log("inside");
+        console.log(x);
+    }
+    secondFunction(); // this logs x because it calls the function and the log function inside
+    // is able to reference x at this scope.
+    console.log("outside"); 
+    // console.log(x); // will not work because the const x is defined in the secondFunction().
+
+    // return values are a value that a function returns when it is complete.
+
+
+//ASSIGNMENT
+
+function add7(number) {
+    result = number + 7;
+    console.log(result);
+}
+add7(3);
+
+function multiply(number1, number2) {
+    result = number1 * number2;
+    console.log(result);
+};
+multiply(3,5);
+
+
+
+
+    </script>
+</body>
+</html>
