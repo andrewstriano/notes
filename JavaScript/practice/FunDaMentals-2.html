@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript fundamentals part 2</title>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Tip Calculator</h1>
+
+        <p id="food"></p>
+        <p id="tip-percentage"></p>
+        <p id="total"></p>
+        <button onclick="foodCostFunction()">Need help calculating your bill?</button>
+
+    <script>
+        //Data types
+        // numbers
+        let message = "hello";
+        message = 123456;
+        //you can switch a variable to whatever data type whenever after its declared.
+        
+        let integer = 250
+        , floatingPoint = 250.5
+        , notANumber = NaN
+        , finity = Infinity;
+
+        // if you need a number greater than 2^53 -1 , you can use BigInt.
+
+        BigInt = 123456789012345678901234567890123456789n;
+
+        // String
+
+            //there are three kinds of quotes
+
+            let str = "Hello";
+            let str2 = 'Single quotes are okay too';
+            let phrase = `backticks are extended functionality quotes, they let you add variables and expression using ${str}`;
+            
+            let x = 256;
+
+            let phrase2 = `you can put variables like ${x} in here. you can also do maths in there too ${256 + 30}`;
+
+            //Boolean
+            //only has 2 values, true or false.
+
+            let nameFieldChecked = true;
+            let ageFieldChecked = false;
+
+            // they're also the outputs of comparisons.
+
+
+            //null 
+            // does not belong to any other data type, it forms its own type consisting of itself.
+
+            let age = null;
+            //simply means empty, or unknown.
+
+            const string = "The revolution will not be televised";
+            console.log(string);
+
+            
+            
+            
+
+            function foodCostFunction() {
+                let foodCost = prompt("How much was your food?");
+                let tipPercentage = prompt("what percentage of a tip would you like to leave?");
+                let totalCost = Number(foodCost)*(Number(tipPercentage) / 100) + Number(foodCost);
+
+                if (foodCost != null) {
+                    document.getElementById("food").innerHTML = `food cost is ${foodCost}, you're leaving a ${tipPercentage} percent tip, and your total cost is ${totalCost} dollars.`;
+                }
+            }
+            
+
+            // if you find yourself entering a string that contains the same quotes that you used to contain the string you can
+            //solve this issue by using escape characters
+
+            let string5 = 'This string is great, but i should\'ve used an escape character';
+
+            alert(string5);
+            let nameOfStringType = "template literal";
+             let templateLiteral = `this is a ${nameOfStringType} string. you can tell by the way it is`;
+             alert(templateLiteral);
+            const today = new Date();
+
+            let hours = today.getHours();
+            alert(hours);
+
+             if (hours < 10) {
+                greeting = "good morning";
+             } else if (hours < 20)  {
+                greeting = "good day";
+             } else {
+                greeting = "good  night";
+             }
+             alert (greeting);
+    </script>
+</body>
+</html>
