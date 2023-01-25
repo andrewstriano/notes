@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Solving Practice</title>
+</head>
+<body>
+    <!-- <div class="psudocode">
+        Wanted: an app where a user can input a number, then the program will
+        print each number from 1 to the input. all numbers dividible by 3 will 
+        be replaced by fizz, if divisible by 5 then print buzz
+        if its divisible by both then print fizzbuzz.
+        
+        
+        
+        when a user inputs a number
+        loop from 1 to the entered number 
+        if current number is divisible by 3 then print fizz
+        if current number is divisible by 5 then print buzz
+        if current number is divisible by 3 and 5 then pring fizzbuzz
+        otherwise print the current number.        
+    </div> -->
+    
+    <script>
+        let answer = parseInt(prompt("Please enter the number you would like to fizzBuzz up to."));
+
+        for (let i = 1; i <= answer; i++) {
+            if (i % 3 ===0 && i % 5 === 0) {
+            console.log("FizzBuzz");
+            } else if (i % 3 === 0) {
+            console.log("Fizz");
+            } else if (i % 5 === 0) {
+            console.log("Buzz");
+            } else {
+            console.log(i);
+           }
+        }; // this meets all requirements. 
+    </script>
+</body>
+</html>
