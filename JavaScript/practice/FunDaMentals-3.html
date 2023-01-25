@@ -146,9 +146,24 @@ function multiply(number1, number2) {
 };
 multiply(3,5);
 
+function capitalize(string) {
+    const stringLower = string.toLowerCase();
+    const stringFinal = stringLower.charAt(0).toUpperCase() + stringLower.slice(1);
+    console.log(stringFinal);
+}
+//Tests
 
+capitalize("randomStRING"); //works
+capitalize("lowercasestring"); //works
+capitalize("UPPERCASESTRING"); //works
 
-
+function lastLetter(string) {
+    const lastLetter = string.charAt(string.length-1);
+    console.log(lastLetter);
+}
+//test
+lastLetter("hello"); //works
+lastLetter("Hello i am andrew"); //works
     </script>
 </body>
 </html>
