@@ -56,6 +56,7 @@ let lastFruit = fruits[fruits.length -1]; // returns the last fruit.
 let fLen = fruits.length;
 
 let text = "<ul>";
+let i = 0;
 for (i=0; i < fLen; i++) {   // loops through the fruit array
     text += "<li>" + fruits[i] + "</li>"; // and assigns li tags for
 };                                  // each fruit array item.
@@ -196,18 +197,55 @@ clearButton.addEventListener("click", () => results.textContent = "");
 
 const myFamily = ["Hayley", "Henry", "Oliver"];
 
-let myFamilysName = "My wife's name is ";
+let myFamilysName = "My fams name is ";
 
-for (let i = 0; myFamily.length; i++) {
+for (let i = 0; i < myFamily.length; i++) {
     if (i === myFamily.length - 1) {
 
         myFamilysName += `and ${myFamily[i]}`;
 
     } else {
         
-        myFamilysName += `${myFamily[i]}`;
+        myFamilysName += `${myFamily[i]} `;
 
     }
 }
 console.log(myFamilysName);
 
+
+
+let myFavoriteCats = "My cats are called ";
+
+i = 0; // you have to declare i
+
+while (i < cats.length) { // while index is less than the length of cats
+    if (i === cats.length -1) {  // if its the last element
+        myFavoriteCats += `and ${cats[i]}, `;
+    } else { // every other iteration
+        myFavoriteCats += `${cats[i]}, `;
+    }
+    
+    i++; 
+}
+console.log(myFavoriteCats);
+
+
+const output = document.querySelector('.output');
+output.innerHTML = '';
+
+i = 10;
+
+while (i >= 0) {
+  const para = document.createElement('p');
+  if (i === 10) {
+    para.textContent = `Countdown ${i}`;
+  } else if (i === 0) {
+    para.textContent = 'Blast off!';
+  } else {
+    para.textContent = i;
+  }
+
+  output.appendChild(para);
+
+  i--;
+}
