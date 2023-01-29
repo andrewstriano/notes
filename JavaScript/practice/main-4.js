@@ -147,3 +147,67 @@ const newFruits = fruits.slice(1,3); // creates a new array with a slice
 
 
 
+//--------------------------------------LOOPS--------------------------------------------------
+
+//FOR OF LOOPS
+
+const cats = ["leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+for (const cat of cats) {
+    console.log(cat);     // given collection cats, get first item, assign it to cat, then run code in {}
+                          // get the next item in the collection and do the same thing.
+}
+
+
+function toUpper(string) {
+    return string.toUpperCase();
+}
+
+const upperCats = cats.map(toUpper); // passed a function into cats.map 
+// it then calls that function once for every element in the array.
+
+console.log(upperCats);
+
+function lCat(cat) {
+    return cat.startsWith("L"); // creates the test for sorting, must return a boolean.
+}
+
+const filtered = cats.filter(lCat); // runs every item through L cat, and the ones that return true get put into the filtered arrray.
+
+
+console.log(filtered);
+
+const results = document.querySelector("#results");
+
+function calculate () {
+    for (let i = 1; i <10; i++) {
+
+        const newResult = ` ${i} X ${i} = ${i * i}`;
+        results.textContent += `${newResult} \n`;
+    }
+    results.textContent += "\nFinished"
+}
+
+const calculateButton = document.querySelector("#calculate");
+const clearButton = document.querySelector("#clear");
+
+calculateButton.addEventListener("click", calculate);
+clearButton.addEventListener("click", () => results.textContent = "");
+
+const myFamily = ["Hayley", "Henry", "Oliver"];
+
+let myFamilysName = "My wife's name is ";
+
+for (let i = 0; myFamily.length; i++) {
+    if (i === myFamily.length - 1) {
+
+        myFamilysName += `and ${myFamily[i]}`;
+
+    } else {
+        
+        myFamilysName += `${myFamily[i]}`;
+
+    }
+}
+console.log(myFamilysName);
+
